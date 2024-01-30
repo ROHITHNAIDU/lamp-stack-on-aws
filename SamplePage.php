@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>Customer Details</h1>
+<h1>Customer Detail</h1>
 <?php
 
   $DB_SERVER = getenv('RDS_HOSTNAME');
