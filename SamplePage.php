@@ -1,19 +1,15 @@
+<?php include "/var/www/inc/dbinfo.inc"; ?>
 <html>
 <body>
-<h1>Customer Detail</h1>
+<h1>Customer Details</h1>
 <?php
 
-  $DB_SERVER = getenv('RDS_HOSTNAME');
-  $DB_DATABASE = getenv('RDS_DB_NAME');
-  $DB_USERNAME = getenv('RDS_USERNAME');
-  $DB_PASSWORD = getenv('RDS_PASSWORD');
-
   /* Connect to MySQL and select the database. */
-  $connection = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD);
+  $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
-  $database = mysqli_select_db($connection, $DB_DATABASE);
+  $database = mysqli_select_db($connection, DB_DATABASE);
 
   /* Ensure that the EMPLOYEES table exists. */
   VerifyEmployeesTable($connection, DB_DATABASE);
